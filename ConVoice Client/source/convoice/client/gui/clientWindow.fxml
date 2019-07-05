@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="convoice.client.gui.GUIController">
+   <left>
+      <Accordion fx:id="mainMenu" minWidth="-Infinity" prefHeight="687.0" prefWidth="296.0" BorderPane.alignment="CENTER">
+        <panes>
+          <TitledPane fx:id="connectionPanel" animated="false" text="Connection">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Address:" />
+                        <TextField fx:id="connectionAddressTextField" layoutX="14.0" layoutY="35.0" prefHeight="31.0" prefWidth="251.0" text="localhost" />
+                        <TextField fx:id="connectionPortTextField" layoutX="14.0" layoutY="93.0" prefHeight="31.0" prefWidth="251.0" text="6969" />
+                        <TextField fx:id="connectionUsernameTextField" layoutX="14.0" layoutY="227.0" prefHeight="31.0" prefWidth="249.0" />
+                        <TextField fx:id="connectionNicknameTextField" layoutX="14.0" layoutY="168.0" prefHeight="31.0" prefWidth="250.0" text="Peterskhan" />
+                        <PasswordField fx:id="connectionPasswordField" layoutX="14.0" layoutY="286.0" prefHeight="31.0" prefWidth="248.0" />
+                        <Label layoutX="14.0" layoutY="72.0" text="Port:" />
+                        <Label layoutX="14.0" layoutY="204.0" text="Username:" />
+                        <Label layoutX="14.0" layoutY="144.0" text="Nickname:" />
+                        <Label layoutX="14.0" layoutY="263.0" text="Password:" />
+                        <Separator layoutX="14.0" layoutY="135.0" prefHeight="0.0" prefWidth="250.0" />
+                        <Button fx:id="connectionConnectDisconnectButton" layoutX="9.0" layoutY="568.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="274.0" text="Connect" />
+                        <CheckBox fx:id="connectionMemberCheckBox" layoutX="14.0" layoutY="327.0" mnemonicParsing="false" text="Member" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="channelsPanel" animated="false" prefHeight="656.0" prefWidth="315.0" text="Channel">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="167.0">
+                     <children>
+                        <TextField fx:id="channelNameTextField" layoutX="97.0" layoutY="9.0" prefHeight="31.0" prefWidth="191.0" />
+                        <TextField fx:id="channelTopicTextField" layoutX="97.0" layoutY="45.0" prefHeight="31.0" prefWidth="191.0" />
+                        <TextArea fx:id="channelDescriptionTextArea" layoutX="97.0" layoutY="83.0" prefHeight="118.0" prefWidth="191.0" />
+                        <PasswordField fx:id="channelPasswordField" layoutX="97.0" layoutY="207.0" prefHeight="31.0" prefWidth="191.0" />
+                        <TextField fx:id="channelMaxClientsTextField" layoutX="97.0" layoutY="246.0" prefHeight="31.0" prefWidth="191.0" />
+                        <CheckBox fx:id="channelPasswordCheckBox" layoutX="15.0" layoutY="289.0" mnemonicParsing="false" text="Password" />
+                        <CheckBox fx:id="channelPermanentCheckBox" layoutX="119.0" layoutY="289.0" mnemonicParsing="false" text="Permanent" />
+                        <Button fx:id="channelEditApplyButton" layoutX="8.0" layoutY="487.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="278.0" text="Edit" />
+                        <Button fx:id="channelDeleteButton" layoutX="8.0" layoutY="527.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="278.0" text="Delete" />
+                        <Button fx:id="channelCreateSaveButton" layoutX="8.0" layoutY="568.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="278.0" text="Create" />
+                        <Label layoutX="13.0" layoutY="14.0" text="Name:" />
+                        <Label layoutX="13.0" layoutY="50.0" prefHeight="21.0" prefWidth="43.0" text="Topic:" />
+                        <Label layoutX="13.0" layoutY="83.0" text="Description:" />
+                        <Label layoutX="16.0" layoutY="212.0" text="Password:" />
+                        <Label layoutX="16.0" layoutY="251.0" text="Max clients:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </Accordion>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="483.0" prefWidth="718.0">
+               <children>
+                  <TreeView fx:id="mainChannelsTreeView" prefHeight="423.0" prefWidth="591.0" />
+                  <TextArea fx:id="mainInspectorTextArea" editable="false" prefHeight="425.0" prefWidth="290.0" wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="mainChatTextArea" editable="false" prefHeight="255.0" prefWidth="668.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </TextArea>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="mainChatInputTextField" prefHeight="31.0" prefWidth="628.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="mainSendButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="256.0" text="Send">
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="21.0" prefWidth="953.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mainStatusLabel" text="Connect to a server on the Connection panel.">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
